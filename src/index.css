@@ -1,5 +1,6 @@
 @import url('./css/home.css');
 @import url('./css/solutions.css');
+
 /* Navbar */
 @media screen and (min-width: 992px) and (max-width: 1308px) {
   .navbar_menu.is-page-height-tablet {
