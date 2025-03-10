@@ -1,6 +1,6 @@
 import './index.css';
 
-import { animateFooter, animateNavbar } from './utils/components';
+import { animateFooter } from './utils/components';
 import {
   initHeroAnimation,
   initHIWAnimation,
@@ -18,7 +18,6 @@ import {
 window.addEventListener('load', () => {
   setTimeout(() => {
     // Animations communes à toutes les pages
-    animateNavbar();
     animateFooter();
 
     // Animations spécifiques à la page d'accueil

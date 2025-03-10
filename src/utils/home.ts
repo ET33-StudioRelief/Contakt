@@ -131,6 +131,20 @@ export function initPointsAnimation(): void {
 }
 
 export function initSolutionsAnimation(): void {
+  // Animation du wrapper décoratif liée au scroll
+  gsap.from('.hp_solutions_decorative-wrapper', {
+    scrollTrigger: {
+      trigger: '.section_hp_solutions',
+      start: 'top bottom',
+      end: 'top',
+      scrub: 1.5,
+      toggleActions: 'restart pause resume reverse',
+    },
+    y: -200,
+    ease: 'none',
+  });
+
+  // Timeline pour les autres animations
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_hp_solutions',
@@ -139,21 +153,14 @@ export function initSolutionsAnimation(): void {
     },
   });
 
-  // Animation du wrapper décoratif
-  tl.from('.hp_solutions_decorative-wrapper', {
+  // Animation de chaque élément de la grille en séquence
+  tl.from('.w-layout-grid.hp_solutions_grid > *', {
     opacity: 0,
-    y: -100,
-    duration: 1,
-    ease: 'power3.out',
+    y: 50,
+    duration: 0.8,
+    ease: 'power2.out',
+    stagger: 0.2,
   })
-    // Animation de chaque élément de la grille en séquence
-    .from('.w-layout-grid.hp_solutions_grid > *', {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      ease: 'power2.out',
-      stagger: 0.2, // Délai entre chaque élément
-    })
     // Animation de la flèche
     .from('.hp_solutions_arrow-wrapper', {
       opacity: 0,
@@ -175,7 +182,7 @@ export function initReasonsAnimation(): void {
   // Animation du wrapper décoratif et du kiwi vert simultanément
   tl.from('.hp_reasons_decorativ-wrapper', {
     opacity: 0,
-    x: -100,
+    x: 100,
     duration: 1,
     ease: 'power3.out',
   })
@@ -235,21 +242,21 @@ export function initTakeCareAnimation(): void {
   tl.from('.hp_take-care_decorativ-wrapper', {
     opacity: 0,
     x: -100,
-    duration: 1,
+    duration: 0.2,
     ease: 'power3.out',
   })
     // Animation du titre h2
     .from('.hp_take-care_content h2', {
       opacity: 0,
       y: 30,
-      duration: 0.8,
+      duration: 0.4,
       ease: 'power2.out',
     })
     // Animation de la colonne gauche
     .from('.hp_take-care_left-col', {
       opacity: 0,
       x: -100,
-      duration: 1,
+      duration: 0.6,
       ease: 'power3.out',
     })
     // Animation des éléments de la colonne droite en séquence

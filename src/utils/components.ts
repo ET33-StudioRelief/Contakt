@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const animateNavbar = () => {
+/*export const animateNavbar = () => {
   let lastScrollTop = 0;
   const navbar = document.querySelector('.navbar_component');
 
@@ -47,7 +47,7 @@ export const animateNavbar = () => {
 
     lastScrollTop = st;
   });
-};
+};*/
 
 export const animateFooter = () => {
   const timeline = gsap.timeline({

@@ -8,6 +8,20 @@
     flex-direction: column;
     flex-wrap: nowrap;
   }
+  .hp_hero_left-col {
+    width: 100%;
+  }
+  .hp_hero_left-col h1 {
+    font-size: 2.75rem;
+  }
+  .hp_hero_right-col {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .hp_hero_grp-img-wrap img {
+    height: 40rem !important;
+    width: auto;
+  }
   .hp_hero_right-kiwi-wrapper {
     height: 75%;
   }
@@ -22,6 +36,8 @@
   }
   .hp_hero_grp-img-wrap {
     top: 6.3rem;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
