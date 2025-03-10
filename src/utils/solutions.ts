@@ -54,31 +54,47 @@ export const animateSolutionsHero = () => {
 };
 
 export const animateSolutionsHowItWorks = () => {
-  const timeline = gsap.timeline({
+  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_solution_hiw',
-      start: 'top 80%',
+      start: 'top center',
       toggleActions: 'restart pause resume reverse',
     },
   });
 
-  timeline.from('.solution_hiw_mobile-wrapper', {
+  // Animation de la colonne gauche
+  tl.from('.solutions_hiw_left-col', {
     x: -100,
     opacity: 0,
     duration: 0.8,
     ease: 'power2.out',
-  });
-
-  timeline.from(
-    '.solution_hiw_grid',
-    {
-      x: 100,
+  })
+    // Animation de la colonne droite
+    .from(
+      '.solutions_hiw_right-col',
+      {
+        x: 100,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+      '-=0.4'
+    )
+    // Animation séquentielle des rows de la grille
+    .from('.solution_hiw_grid > *', {
       opacity: 0,
-      duration: 0.8,
+      y: 30,
+      duration: 0.6,
+      stagger: 0.2, // Délai entre chaque row
       ease: 'power2.out',
-    },
-    '-=0.4'
-  );
+    })
+    // Animation de la flèche
+    .from('.solution_hiw_arrow-wrapper', {
+      y: -50,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+    });
 };
 
 export const animateSolutionsLevel = () => {

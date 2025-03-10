@@ -10,6 +10,12 @@ import {
   initTakeCareAnimation,
 } from './utils/home';
 import {
+  initMissionHomemadeAnimation,
+  initMissionImpactAnimation,
+  initMissionSelectionAnimation,
+  initMissionStarterAnimation,
+} from './utils/mission';
+import {
   animateSolutionsHero,
   animateSolutionsHowItWorks,
   animateSolutionsLevel,
@@ -42,6 +48,16 @@ window.addEventListener('load', () => {
       animateSolutionsHero();
       animateSolutionsHowItWorks();
       animateSolutionsLevel();
+    }
+
+    // Animations spécifiques à la page mission
+    const isMissionPage = window.location.pathname.includes('/mission');
+
+    if (isMissionPage) {
+      initMissionStarterAnimation();
+      initMissionHomemadeAnimation();
+      initMissionSelectionAnimation();
+      initMissionImpactAnimation();
     }
   }, 100);
 });
