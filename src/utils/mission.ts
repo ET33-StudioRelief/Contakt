@@ -4,6 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export function initMissionHomemadeAnimation(): void {
+  if (window.innerWidth < 768) return;
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.mission_homemade',
