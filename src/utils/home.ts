@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function initHeroAnimation(): void {
+export function initHpHeroAnimation(): void {
   const elements = [
     '.hp_hero_yellow-decorative-wrapper',
     '.hp_hero_right-kiwi-wrapper',
@@ -69,7 +69,7 @@ export function initHeroAnimation(): void {
     });
 }
 
-export function initHIWAnimation(): void {
+export function initHpHIWAnimation(): void {
   gsap.from('.hp_hiw_content', {
     scrollTrigger: {
       trigger: '.section_hp_hiw',
@@ -83,7 +83,7 @@ export function initHIWAnimation(): void {
   });
 }
 
-export function initPointsAnimation(): void {
+export function initHpPointsAnimation(): void {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_hp_points',
@@ -130,7 +130,7 @@ export function initPointsAnimation(): void {
     );
 }
 
-export function initSolutionsAnimation(): void {
+export function initHpSolutionsAnimation(): void {
   // Animation du wrapper décoratif liée au scroll
   gsap.from('.hp_solutions_decorative-wrapper', {
     scrollTrigger: {
@@ -170,7 +170,7 @@ export function initSolutionsAnimation(): void {
     });
 }
 
-export function initReasonsAnimation(): void {
+export function initHpReasonsAnimation(): void {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_hp_reasons',
@@ -230,7 +230,7 @@ export function initReasonsAnimation(): void {
     });
 }
 
-export function initTakeCareAnimation(): void {
+export function initHpTakeCareAnimation(): void {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_hp-take-care',

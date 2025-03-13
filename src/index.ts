@@ -2,12 +2,17 @@ import './index.css';
 
 import { animateFooter } from './utils/components';
 import {
-  initHeroAnimation,
-  initHIWAnimation,
-  initPointsAnimation,
-  initReasonsAnimation,
-  initSolutionsAnimation,
-  initTakeCareAnimation,
+  initHeroHistoryAnimation,
+  initHistoryExperienceAnimation,
+  initHistoryKiwiAnimation,
+} from './utils/history';
+import {
+  initHpHeroAnimation,
+  initHpHIWAnimation,
+  initHpPointsAnimation,
+  initHpReasonsAnimation,
+  initHpSolutionsAnimation,
+  initHpTakeCareAnimation,
 } from './utils/home';
 import {
   initMissionHomemadeAnimation,
@@ -16,9 +21,9 @@ import {
   initMissionStarterAnimation,
 } from './utils/mission';
 import {
-  animateSolutionsHero,
-  animateSolutionsHowItWorks,
-  animateSolutionsLevel,
+  initSolutionsHeroAnimation,
+  initSolutionsHowItWorksAnimation,
+  initSolutionsLevelAnimation,
 } from './utils/solutions';
 
 window.addEventListener('load', () => {
@@ -33,25 +38,34 @@ window.addEventListener('load', () => {
       window.location.pathname === '/index.html';
 
     if (isHomePage) {
-      initHeroAnimation();
-      initHIWAnimation();
-      initPointsAnimation();
-      initSolutionsAnimation();
-      initReasonsAnimation();
-      initTakeCareAnimation();
+      initHpHeroAnimation();
+      initHpHIWAnimation();
+      initHpPointsAnimation();
+      initHpSolutionsAnimation();
+      initHpReasonsAnimation();
+      initHpTakeCareAnimation();
     }
 
     // Animations spécifiques à la page solutions
     const isSolutionsPage = window.location.pathname.includes('/solutions');
 
     if (isSolutionsPage) {
-      animateSolutionsHero();
-      animateSolutionsHowItWorks();
-      animateSolutionsLevel();
+      initSolutionsHeroAnimation();
+      initSolutionsHowItWorksAnimation();
+      initSolutionsLevelAnimation();
     }
 
     // Animations spécifiques à la page mission
-    const isMissionPage = window.location.pathname.includes('/mission');
+    const isHistoryPage = window.location.pathname.includes('/notre-histoire');
+
+    if (isHistoryPage) {
+      initHeroHistoryAnimation();
+      initHistoryKiwiAnimation();
+      initHistoryExperienceAnimation();
+    }
+
+    // Animations spécifiques à la page mission
+    const isMissionPage = window.location.pathname.includes('/notre-mission');
 
     if (isMissionPage) {
       initMissionStarterAnimation();

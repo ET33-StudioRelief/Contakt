@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const animateSolutionsHero = () => {
+export const initSolutionsHeroAnimation = () => {
   const timeline = gsap.timeline();
 
   // Animation de la colonne gauche
@@ -53,7 +53,7 @@ export const animateSolutionsHero = () => {
   ); // Commence légèrement avant la fin de l'animation précédente
 };
 
-export const animateSolutionsHowItWorks = () => {
+export const initSolutionsHowItWorksAnimation = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_solution_hiw',
@@ -97,7 +97,7 @@ export const animateSolutionsHowItWorks = () => {
     });
 };
 
-export const animateSolutionsLevel = () => {
+export const initSolutionsLevelAnimation = () => {
   const timeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_solutions_level',
