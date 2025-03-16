@@ -61,14 +61,20 @@ export const initSolutionsHowItWorksAnimation = () => {
       toggleActions: 'restart pause resume reverse',
     },
   });
-
-  // Animation de la colonne gauche
-  tl.from('.solutions_hiw_left-col', {
+  // Animation du mobile
+  tl.from('.solutions_hiw_contakt-type', {
     x: -100,
     opacity: 0,
     duration: 0.8,
     ease: 'power2.out',
   })
+    // Animation de la colonne droite
+    .from('.solution_hiw_mobile-wrapper', {
+      x: -100,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power2.out',
+    })
     // Animation de la colonne droite
     .from(
       '.solutions_hiw_right-col',

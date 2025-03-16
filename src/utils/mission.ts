@@ -47,6 +47,7 @@ export function initMissionHomemadeAnimation(): void {
 }
 
 export function initMissionSelectionAnimation(): void {
+  if (window.innerWidth < 768) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_mission_selection',
@@ -84,6 +85,24 @@ export function initMissionSelectionAnimation(): void {
       stagger: 0.15, // Délai entre chaque carte
       ease: 'power1.out',
     });
+}
+
+export function initMissionCardSelectionMobile(): void {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.mission_selection_grid',
+      start: 'top center',
+      toggleActions: 'restart pause resume reverse',
+    },
+  });
+
+  tl.from('.selection_card_component', {
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+    ease: 'power2.out',
+    stagger: 0.2,
+  });
 }
 
 export function initMissionImpactAnimation(): void {

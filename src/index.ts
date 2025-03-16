@@ -11,10 +11,12 @@ import {
   initHpHIWAnimation,
   initHpPointsAnimation,
   initHpReasonsAnimation,
+  initHpReasonsMobileAnimation,
   initHpSolutionsAnimation,
   initHpTakeCareAnimation,
 } from './utils/home';
 import {
+  initMissionCardSelectionMobile,
   initMissionHomemadeAnimation,
   initMissionImpactAnimation,
   initMissionSelectionAnimation,
@@ -44,6 +46,9 @@ window.addEventListener('load', () => {
       initHpSolutionsAnimation();
       initHpReasonsAnimation();
       initHpTakeCareAnimation();
+      if (window.innerWidth < 768) {
+        initHpReasonsMobileAnimation();
+      }
     }
 
     // Animations spécifiques à la page solutions
@@ -72,6 +77,9 @@ window.addEventListener('load', () => {
       initMissionHomemadeAnimation();
       initMissionSelectionAnimation();
       initMissionImpactAnimation();
+      if (window.innerWidth < 768) {
+        initMissionCardSelectionMobile();
+      }
     }
   }, 100);
 });
