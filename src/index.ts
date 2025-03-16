@@ -1,6 +1,6 @@
 import './index.css';
 
-import { animateFooter } from './utils/components';
+import { animateFooter, svgComponent } from './utils/components';
 import {
   initHeroHistoryAnimation,
   initHistoryExperienceAnimation,
@@ -32,6 +32,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     // Animations communes à toutes les pages
     animateFooter();
+    svgComponent();
 
     // Animations spécifiques à la page d'accueil
     const isHomePage =

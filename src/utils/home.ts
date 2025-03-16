@@ -76,6 +76,8 @@ export function initHpHeroAnimation(): void {
 }
 
 export function initHpHIWAnimation(): void {
+  // Skip animation if screen width is less than 768px
+  if (window.innerWidth < 768) return;
   // Animate content with scroll trigger
   gsap.from('.hp_hiw_content', {
     scrollTrigger: {

@@ -3,51 +3,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/*export const animateNavbar = () => {
-  let lastScrollTop = 0;
-  const navbar = document.querySelector('.navbar_component');
-
-  if (!navbar) return;
-
-  // Initialiser la navbar
-  gsap.set(navbar, {
-    position: 'fixed',
-    top: 0,
-    width: '100%',
-    zIndex: 1000,
-  });
-
-  // Créer la timeline pour l'animation
-  const tl = gsap.timeline({ paused: true });
-
-  tl.to(navbar, {
-    yPercent: -100,
-    duration: 0.4,
-    ease: 'power2.inOut',
-  });
-
-  // Écouter le scroll
-  window.addEventListener('scroll', () => {
-    const st = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Ne rien faire si on est tout en haut de la page
-    if (st <= 0) {
-      tl.reverse();
-      return;
+export function svgComponent() {
+  document.querySelectorAll('[svg="component"]').forEach((element) => {
+    const svgCode = element.textContent;
+    if (svgCode !== null) {
+      element.innerHTML = svgCode;
     }
-
-    // Scroll vers le bas = cacher la navbar
-    if (st > lastScrollTop) {
-      tl.play();
-    }
-    // Scroll vers le haut = montrer la navbar
-    else {
-      tl.reverse();
-    }
-
-    lastScrollTop = st;
   });
-};*/
+}
 
 export const animateFooter = () => {
   const timeline = gsap.timeline({
