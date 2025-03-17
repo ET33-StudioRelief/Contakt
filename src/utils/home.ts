@@ -83,7 +83,6 @@ export function initHpHIWAnimation(): void {
     scrollTrigger: {
       trigger: '.section_hp_hiw',
       start: 'top center',
-      toggleActions: 'restart pause resume reverse',
     },
     opacity: 0,
     y: 100,

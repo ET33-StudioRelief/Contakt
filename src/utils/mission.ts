@@ -110,7 +110,7 @@ export function initMissionImpactAnimation(): void {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_mission_impact',
-      start: 'top center',
+      start: 'top bottom',
       toggleActions: 'restart pause resume reverse',
     },
   });
@@ -123,7 +123,7 @@ export function initMissionImpactAnimation(): void {
   });
 
   // Animation de scale de la colonne droite liée au scroll
-  gsap.from('.mission_impact_right-col', {
+  /*gsap.from('.mission_impact_right-col', {
     scrollTrigger: {
       trigger: '.section_mission_impact',
       start: 'top bottom',
@@ -133,7 +133,7 @@ export function initMissionImpactAnimation(): void {
     },
     scale: 0,
     ease: 'none',
-  });
+  });*/
 }
 
 export function initMissionStarterAnimation(): void {
