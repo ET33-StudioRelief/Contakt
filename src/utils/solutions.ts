@@ -104,20 +104,6 @@ export const initSolutionsHowItWorksAnimation = () => {
 };
 
 export const initSolutionsLevelAnimation = () => {
-  // Animation pour left-col avec ScrollTrigger simple (one-shot)
-  ScrollTrigger.create({
-    trigger: '.section_solutions_level',
-    start: 'top',
-    onEnter: () => {
-      gsap.from('.solutions_level_left-col', {
-        opacity: 0,
-        y: 50,
-        duration: 0.3,
-        ease: 'power1.inOut',
-      });
-    },
-  });
-
   // Animation avec scrollTrigger et scrub pour right-col
   gsap.from('.solutions_level_right-col', {
     opacity: 0,
