@@ -106,7 +106,6 @@ export function initMissionCardSelectionMobile(): void {
 }
 
 export function initMissionImpactAnimation(): void {
-  // Animation de la colonne gauche
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section_mission_impact',
@@ -122,7 +121,7 @@ export function initMissionImpactAnimation(): void {
     ease: 'power2.out',
   });
 
-  // Animation de scale de la colonne droite liée au scroll
+  // scale on right col - scrolltrigger
   /*gsap.from('.mission_impact_right-col', {
     scrollTrigger: {
       trigger: '.section_mission_impact',
@@ -141,35 +140,35 @@ export function initMissionStarterAnimation(): void {
     scrollTrigger: {
       trigger: '.mission_starter_white-shape',
       start: 'top center',
-      toggleActions: 'play none none none', // Joue une seule fois
+      toggleActions: 'play none none none', // play one time
     },
   });
 
-  // Animation de la forme blanche en slide right
+  // slide right on white shape
   tl.from('.mission_starter_white-shape', {
     x: -100,
     duration: 0.8,
     ease: 'power2.out',
   })
-    // Animation du contenu texte
+    // texte apparition
     .from('.solutions_hero_text-content', {
       opacity: 0,
       y: 30,
       duration: 0.6,
       ease: 'power2.out',
     })
-    // Animation du kiwi rouge en slide down
+    // slide down on red kiwi
     .from('.hero-mission_red-kiwi-wrapper', {
       y: -100,
       opacity: 0,
       duration: 0.8,
       ease: 'power2.out',
     })
-    // Animation du kiwi vert avec bounce
+    // bounce on green kiwi
     .from('.hero-mission_green-kiwi-wrapper', {
       opacity: 0,
       scale: 0.5,
       duration: 1,
-      ease: 'elastic.out(1, 0.3)', // Effet de rebond élastique
+      ease: 'elastic.out(1, 0.3)',
     });
 }

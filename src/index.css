@@ -1,5 +1,6 @@
 @import url('./css/home.css');
 @import url('./css/solutions.css');
+@import url('./css/mission.css');
 
 /* Navbar */
 @media screen and (min-width: 992px) and (max-width: 1308px) {
@@ -14,7 +15,7 @@
     width: 9rem;
     height: 4rem;
   }
-  .navbar_link {
-    font-size: 1.125rem;
+  .navbar_logo-link {
+    margin-right: 0px;
   }
 }

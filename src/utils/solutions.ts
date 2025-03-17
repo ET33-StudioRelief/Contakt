@@ -65,7 +65,7 @@ export const initSolutionsHowItWorksAnimation = () => {
   tl.from('.solutions_hiw_contakt-type', {
     x: -100,
     opacity: 0,
-    duration: 0.8,
+    duration: 0.4,
     ease: 'power2.out',
   })
     // Animation de la colonne droite
@@ -81,7 +81,7 @@ export const initSolutionsHowItWorksAnimation = () => {
       {
         x: 100,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.4,
         ease: 'power2.out',
       },
       '-=0.4'
@@ -90,7 +90,7 @@ export const initSolutionsHowItWorksAnimation = () => {
     .from('.solution_hiw_grid > *', {
       opacity: 0,
       y: 30,
-      duration: 0.6,
+      duration: 0.2,
       stagger: 0.2, // Délai entre chaque row
       ease: 'power2.out',
     })
@@ -104,7 +104,26 @@ export const initSolutionsHowItWorksAnimation = () => {
 };
 
 export const initSolutionsLevelAnimation = () => {
-  const timeline = gsap.timeline({
+  // Animation pour left-col avec ScrollTrigger simple (one-shot)
+  ScrollTrigger.create({
+    trigger: '.section_solutions_level',
+    start: 'top',
+    onEnter: () => {
+      gsap.from('.solutions_level_left-col', {
+        opacity: 0,
+        y: 50,
+        duration: 0.3,
+        ease: 'power1.inOut',
+      });
+    },
+  });
+
+  // Animation avec scrollTrigger et scrub pour right-col
+  gsap.from('.solutions_level_right-col', {
+    opacity: 0,
+    scale: 0,
+    duration: 0.5,
+    ease: 'sine.inOut',
     scrollTrigger: {
       trigger: '.section_solutions_level',
       start: 'top bottom',
@@ -112,19 +131,5 @@ export const initSolutionsLevelAnimation = () => {
       scrub: 2.5,
       toggleActions: 'restart pause resume reverse',
     },
-  });
-
-  timeline.from('.solutions_level_left-col', {
-    opacity: 0,
-    y: 50,
-    duration: 2,
-    ease: 'power1.inOut',
-  });
-
-  timeline.from('.solutions_level_right-col', {
-    opacity: 0,
-    scale: 0,
-    duration: 2.5,
-    ease: 'sine.inOut',
   });
 };
